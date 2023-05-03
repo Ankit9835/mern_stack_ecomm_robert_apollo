@@ -36,15 +36,14 @@ function App() {
           <Route path='/login' element={<LoginPage />}></Route>
           <Route path='/register' element={<RegisterPage />}></Route>
         </Route>
-          <Route  element={<ProtectedComponent  />}>
+        
+        <Route  element={<ProtectedComponent  />}>
             {/* User Module */}
             <Route path='/user' element={<UserProfilePage />}></Route>
             <Route path='/user/my-orders' element={<UserOrdersPage />}></Route>
             <Route path='/user/cart-details' element={<UserCartDetailsPage />}></Route>
             <Route path='/user/order-details' element={<UserOrdersPage />}></Route>
-          
-          </Route>
-        
+        </Route>
         
         <Route  element={<ProtectedComponent admin={true} />}>
          
