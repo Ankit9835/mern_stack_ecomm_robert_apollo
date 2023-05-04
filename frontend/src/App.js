@@ -21,11 +21,15 @@ import AdminOrderDetailsPage from './pages/admin/AdminOrderDetailsPage';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import RoutesWithUserChatComponent from './components/user/RoutesWithUserChatComponent';
-
+import ScrollToTop from "./utils/ScrollToTop";
+import UserOrderDetailsPage from './pages/user/UserOrderDetailsPage';
+import AdminProductsPage from './pages/admin/AdminProductsPage';
+import AdminAnalyticsPage from './pages/admin/AdminAnalyticsPage';
 
 function App() {
   return (
    <BrowserRouter>
+      <ScrollToTop /> 
       <HeaderComponent />
       <Routes>
         <Route element={<RoutesWithUserChatComponent />}>
@@ -42,7 +46,7 @@ function App() {
             <Route path='/user' element={<UserProfilePage />}></Route>
             <Route path='/user/my-orders' element={<UserOrdersPage />}></Route>
             <Route path='/user/cart-details' element={<UserCartDetailsPage />}></Route>
-            <Route path='/user/order-details' element={<UserOrdersPage />}></Route>
+            <Route path='/user/order-details' element={<UserOrderDetailsPage />}></Route>
         </Route>
         
         <Route  element={<ProtectedComponent admin={true} />}>
@@ -50,12 +54,13 @@ function App() {
           {/* Admin Module */}
           <Route path='/admin/user' element={<AdminUserPage />}></Route>
           <Route path='/admin/edit-user' element={<AdminEditUserPage />}></Route>
+          <Route path='/admin/products' element={<AdminProductsPage />}></Route>
           <Route path='/admin/create-product' element={<AdminCreateProductsPage />}></Route>
           <Route path='/admin/edit-product' element={<AdminEditProductsPage />}></Route>
           <Route path='/admin/chats' element={<AdminChatsPage />}></Route>
           <Route path='/admin/orders' element={<AdminOrdersPage />}></Route>
           <Route path='/admin/order-details' element={<AdminOrderDetailsPage />}></Route>
-
+          <Route path='/admin/analytics' element={<AdminAnalyticsPage />}></Route>
         </Route>
       </Routes>
       <FooterComponent />
